@@ -1,0 +1,145 @@
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+    background-image: linear-gradient(#d7dbcf 1%, #fff);
+    height: 100vh;
+}
+
+p {
+    margin: 0;
+}
+h1 {
+    margin-top: 2em;
+}
+h3 {
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.contenedor {
+    display: flex;
+    height: 100vh;
+}
+
+.contenido-productos {
+    flex: 1;
+}
+
+#titulo {
+    text-align: center;
+}
+
+.texto {
+    text-align: center;
+}
+
+/* Buscador de productos */
+.buscador {
+    text-align: center;
+    position: relative;
+}
+
+#sugeridos {
+    position: absolute;
+    padding: 0; 
+    list-style: none;
+    background-color:lavender;
+    width: 300px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+}
+
+#buscador-producto {
+    width: 300px;
+    height: 40px;
+}
+
+/* Contenido Productos */
+#listado {
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+    flex-wrap: wrap;
+}
+
+.producto {
+
+    width: 200px;
+    background-color: #fff;
+    padding: 10px;
+    align-content: center;
+    margin-right: 10px;
+    list-style: none;
+    cursor: pointer;
+}
+
+.producto img {
+    width: 80%;
+}
+
+.imagen-producto {
+    width: 230px;
+    height: 230px;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.nombre {
+    font-size: 16px;
+    color: rgb(46, 44, 54);
+    padding-bottom: 10px;
+}
+
+.precio {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.canasta {
+    min-width: 400px;
+    max-width: 400px;
+    border-left: 1px solid #ececec;
+    text-align: center;
+    padding: 20px 0 0 0;
+    background-color: #d7dbcf;
+}
+
+#canasta {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Contenido Producto en canasta */
+.producto-canasta {
+    display: flex;
+    width: 100%;
+    padding: 20px;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.producto-canasta img {
+    width: 100px;
+}
+
+.descripcion-producto {
+    text-align: left;
+    padding: 20px;
+}
+
+.boton-eliminar {
+    cursor: pointer;
+    background-color: darkgreen;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    box-shadow: none;
+    border: none;
+}
