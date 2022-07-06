@@ -8,15 +8,34 @@ const libros = [
   {id:5, titulo: "A sangre fría",  autor: "Truman Capote", genero: "Policial",precio:"20",imagen:"img/bookmp.jpg"},
   ];
 
-
+/* 
 let canasta = []; // Va a  LocalStorage
 let canastaStorage = JSON.parse(localStorage.getItem('canasta')); 
+*/
+
+/// Con Operador OR
+const canasta = JSON.parse(localStorage.getItem('canasta')) || []
+
+///Popup Sweetalert
+function modalpop(){
+  Swal.fire({
+    title: 'Nuevo Ebook!',
+    text: 'No te pierdas este estreno!',
+    imageUrl: 'img/bookmp.jpg',
+    imageWidth: 250,
+    imageHeight: 250,
+    imageAlt: 'No te lo pierdas',
+  })
+}
+
+setTimeout(modalpop, 2000);
 
 
 // DOM
 const listadoProductos = document.getElementById("listado");
 const precioElementos = document.getElementsByClassName("precio");
 const contenedorCanasta = document.getElementById("canasta");
+const botonBorrar = document.getElementById ("borrarCanasta");
 //const buscadorProducto = document.getElementById('buscador-producto'); Todavía no programo buscador
 
 
@@ -27,6 +46,17 @@ const seleccionarLibro = (libro) => {
   localStorage.setItem('canasta', JSON.stringify(canasta));
 }
 
+/* 
+  function eliminarCarrito() {
+    canasta = [];
+    localStorage.removeItem("carritoEnStorage");
+
+    document.getElementById("carrito").innerHTML = "";
+    document.getElementById("acciones-carrito").innerHTML = "";
+}
+*/
+
+
 // Libos en la canasta "Selección"
 const insertarCanasta = (libro) => {
   const contenedor = document.createElement('div');
@@ -34,13 +64,27 @@ const insertarCanasta = (libro) => {
   contenedor.id = libro.id;
   contenedor.innerHTML = `<img src="${libro.imagen}">
   <div class="descripcion-producto">
-  <p>  Producto: ${libro.titulo}</p>
+  <p>  Ebook: ${libro.titulo}</p>
   <p>  ${libro.autor},${libro.genero} </p>
   <b> $ ${libro.precio}</b>
   </div>`;
 
   contenedorCanasta.append(contenedor);
 }
+
+//Funcion borrar selección
+
+function borrarTodo(canasta)
+{
+    document.getElementById("canasta").innerHTML = "";
+    localStorage.clear();
+}
+
+botonBorrar.onclick = function() { borrarTodo()};
+
+//canasta.length === 0 && alert("Tu canasta está vacío!");
+
+// &&  window.localStorage.clear();
 
 // Tarjetas de libros en la biblioteca "Biblioteca"
 const insertarProductos = () => {
