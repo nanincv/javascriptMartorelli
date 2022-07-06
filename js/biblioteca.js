@@ -35,7 +35,7 @@ const insertarCanasta = (libro) => {
   contenedor.innerHTML = `<img src="${libro.imagen}">
   <div class="descripcion-producto">
   <p>  Producto: ${libro.titulo}</p>
-  <p>  Autor: ${libro.autor},${libro.genero} </p>
+  <p>  ${libro.autor},${libro.genero} </p>
   <b> $ ${libro.precio}</b>
   </div>`;
 
@@ -53,7 +53,8 @@ const insertarProductos = () => {
         <img src="${libro.imagen}" alt="">
       </div>
       <h3>${libro.titulo}</h3>
-      <p class="nombre">${libro.autor},${libro.genero}</p>
+      <p class="nombre">${libro.autor}</p>
+      <p class="nombre">${libro.genero}</p>
       <p class="precio">$${libro.precio}</p>
       <button id="Seleccionar">Agregar</button>`;//Este botón no funciona, el click es en todo el libro Sigo después
 
