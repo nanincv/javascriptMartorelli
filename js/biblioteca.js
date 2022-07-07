@@ -80,7 +80,14 @@ function borrarTodo(canasta)
     localStorage.clear();
 }
 
-botonBorrar.onclick = function() { borrarTodo()};
+botonBorrar.onclick = function() { borrarTodo(); 
+  Swal.fire({
+    position: 'center',
+    icon: 'success',
+    title: 'Tu selección fue borrada con éxito',
+    showConfirmButton: false,
+    timer: 1500
+  })};
 
 //canasta.length === 0 && alert("Tu canasta está vacío!");
 
