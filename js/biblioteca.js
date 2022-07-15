@@ -1,4 +1,5 @@
 // -------- CONSTANTE Libros
+/* 
 const libros = [
   
   {id:1, titulo: "El Hobbit",  autor: "J.R Tolkien", genero: "Novela fantástica",precio:"20",imagen:"img/bookmp.jpg"},
@@ -7,15 +8,16 @@ const libros = [
   {id:4, titulo: "Cuentos de la selva",  autor: "Horacio Quiroga", genero: "Cuento",precio:"20",imagen:"img/bookmp.jpg"},
   {id:5, titulo: "A sangre fría",  autor: "Truman Capote", genero: "Policial",precio:"20",imagen:"img/bookmp.jpg"},
   ];
-
+*/
 /* 
 let canasta = []; // Va a  LocalStorage
 let canastaStorage = JSON.parse(localStorage.getItem('canasta')); 
-*/
 
+*/
 /// Con Operador OR
 const canasta = JSON.parse(localStorage.getItem('canasta')) || []
 
+/* 
 ///Popup Sweetalert
 function modalpop(){
   Swal.fire({
@@ -29,7 +31,7 @@ function modalpop(){
 }
 
 setTimeout(modalpop, 2000);
-
+*/
 
 // DOM
 const listadoProductos = document.getElementById("listado");
@@ -93,6 +95,35 @@ botonBorrar.onclick = function() { borrarTodo();
 
 // &&  window.localStorage.clear();
 
+// FETCH LIBrOS
+const insertarLibrosAJAX = () => {
+  fetch('./libros.json') 
+    .then(respuesta => respuesta.json())
+    .then(resultados => {
+      console.log(resultados);
+      for (const libro of resultados) {
+        let contenidoLibro = document.createElement("li");
+        contenidoLibro.className = "producto";
+        contenidoLibro.id = libro.id;
+        contenidoLibro.innerHTML = `
+          <div class="imagen-producto">
+            <img src="${libro.imagen}" alt="">
+          </div>
+          <h3>${libro.titulo}</h3>
+          <p class="nombre">${libro.autor}</p>
+          <p class="nombre">${libro.genero}</p>
+          <p class="precio">$${libro.precio}</p>`;
+        contenidoLibro.onclick = () => {seleccionarLibro(libro)};
+        listadoProductos.appendChild(contenidoLibro);
+      }
+    }).catch(error => {
+      alert('No hay resultados');
+    }).finally()
+}
+
+insertarLibrosAJAX();
+
+/* 
 // Tarjetas de libros en la biblioteca "Biblioteca"
 const insertarProductos = () => {
   for (const libro of libros) {
@@ -113,7 +144,7 @@ const insertarProductos = () => {
     listadoProductos.appendChild(contenidoLibro);
   }
 }
-
+*/
 // Esto lo copié tal cual...estoy procensándolo
 const verficarStorage = () => {
   console.log(canastaStorage);
@@ -126,6 +157,5 @@ const verficarStorage = () => {
 }
 
 
-insertarProductos();
 verficarStorage();
 
