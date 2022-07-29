@@ -1,43 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi biblioteca Virtual</title>
+  <title>Biblioteca Virtual</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://bootswatch.com/5/vapor/bootstrap.min.css">
 </head>
-
-<body>
-  <div class="contenedor">
-    <div class="contenido-productos">
-      <div id="titulo">
-        <h1>🤖 Bienvenido a mi biblioteca virtual 📚</h1>
-        <h2>Aquí puedes descargar ebooks</h2>
-      </div>
-
-      <div>
-        <h3 class="texto">Mi selección de ibros</h3>
-        <div class="buscador">
-          <!---BUSCADOR NO FUNCIONA TODAVÍA---
-          <form id="formulario-buscador">
-            <input autocomplete="off" id="buscador-producto" type="text" placeholder="Buscar un producto" name="producto">
-          </form>
-          --->
+  <body>
+    <div class="contenedor">
+      <div class="contenido-libros">
+        <div class="row px-5">
+          <h1>🤖 Bienvenido a mi biblioteca virtual 📚</h1>
+          <h4 class="alert alert-dismissible alert-primary " style="margin-left:70px;">Armá tu lista de favoritos con google books</h4>
+          <div class="col-6 p-5 d-flex">
+            <input class="form-control" id = "search" placeholder="Title or Author"/><br><br>
+        <button class="btn btn-outline-primary" id="button">BUSCAR</button>
+          </div>
         </div>
-        <ul id="listado"></ul>
+        <div class="container">
+          <div class="row p-5" id="results"></div>
+      </div>
+      </div>
+      <div class="favoritos border-primary">
+        <h4>Mis favoritos</h4>
+        <div id="favoritosbox"></div>
       </div>
     </div>
-    <div class="canasta">
-      <h4>Tu Selección</h4>
-      <div id="canasta"></div>      
-      <button id="borrarCanasta">Borrar selección</button>
-    </div>
-  </div>
-  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script src="/js/biblioteca.js"></script>
-
-</body>
-
-</html>
+    <script src="/js/libro4.js"></script>
+  </body>
+  
+  </html>
