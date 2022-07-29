@@ -74,12 +74,9 @@ const result = (libros) => {
 	}
 //Quiero mandar a fav los libros
   const toFav = () => {
-    let resultados = new libro ;
-    resultados.push = result;
-    localStorage
-
-  }
-
+    
+  };
+  
 button.addEventListener("click", () => {
   buscarLibro();
 });
