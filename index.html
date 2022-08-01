@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Biblioteca Virtual</title>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://bootswatch.com/5/vapor/bootstrap.min.css">
 </head>
@@ -12,23 +13,32 @@
     <div class="contenedor">
       <div class="contenido-libros">
         <div class="row px-5">
-          <h1>🤖 Bienvenido a mi biblioteca virtual 📚</h1>
-          <h4 class="alert alert-dismissible alert-primary " style="margin-left:70px;">Armá tu lista de favoritos con google books</h4>
-          <div class="col-6 p-5 d-flex">
-            <input class="form-control" id = "search" placeholder="Title or Author"/><br><br>
-        <button class="btn btn-outline-primary" id="button">BUSCAR</button>
+          <h1 data-aos="fade-right" data-aos-delay="500" data-aos-duration="1000">🤖 Bienvenido a mi biblioteca virtual 📚</h1>
+          <h4 data-aos="fade-right" data-aos-delay="700" data-aos-duration="1000" style="margin-left:70px;">Encontrá tus libros favoritos </h4>
+          <div data-aos="fade-right" data-aos-delay="800" data-aos-duration="1000" class="col-6 p-5 d-flex">
+            <input class="form-control" id = "search" placeholder="Título o autor"/><br><br>
+        <button class="btn btn-outline-primary" id="button">BUSCAR </button>
           </div>
         </div>
         <div class="container">
-          <div class="row p-5" id="results"></div>
+          <div class="row p-5 aos-item" id="results">
+          </div>
+
       </div>
       </div>
       <div class="favoritos border-primary">
-        <h4>Mis favoritos</h4>
-        <div id="favoritosbox"></div>
+        <h4 class="card text-white bg-warning mb-3 ">Ebooks gratuitos</h4>
+        <button id="Mas">Mas</button>
+        <div id="favoritosbox">
+        </div>
       </div>
     </div>
     <script src="/js/libro4.js"></script>
+    <!--LIBRERÍA AOS-->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
   
   </html>
