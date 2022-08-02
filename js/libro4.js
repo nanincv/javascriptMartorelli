@@ -11,6 +11,7 @@ const buscarLibro = () => {
     Swal.fire('Por favor ingresá el título de un libro o un autor');
 }
 else {
+  document.getElementById('results').innerHTML="";
   fetch(API_GOOGLE  + search)
   .then((resp)=>{
     console.log(resp);
