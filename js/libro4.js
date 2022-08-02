@@ -32,7 +32,7 @@ else {
 
 //pinto resultados en dom
 const result = (libros) => {	   
-  for(i=0;i<10;i++){
+  for(i=0;i<20;i++){
 	let libro = libros.items[i].volumeInfo ;	
   let venta = libros.items[i].saleInfo;
   let libroId = libros.items[i].id;	
