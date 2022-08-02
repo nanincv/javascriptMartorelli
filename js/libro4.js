@@ -83,7 +83,7 @@ const librosgratis = () => {
 }
 
   const gratuitos = (ebooks) => {
-    for (i=0;i<7;i++) {
+    for (i=0;i<10;i++) {
       let ebook = ebooks.items[i].volumeInfo;	
       const element = document.createElement('div');
       element.innerHTML += 
