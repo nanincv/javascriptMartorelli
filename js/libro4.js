@@ -1,6 +1,6 @@
 //URL API
 const API_GOOGLE = 'https://books.googleapis.com/books/v1/volumes?q=';
-const API_GOOGLE_FREE = 'https://books.googleapis.com/books/v1/volumes?q=fantastic&filter=free-ebooks&max-results=20&startIndex=10';
+const API_GOOGLE_FREE = 'https://books.googleapis.com/books/v1/volumes?q=fantastic&filter=free-ebooks&max-results=20';
 /// Localsotrage Con Operador OR
 //const favoritos = JSON.parse(localStorage.getItem('favoritos')) || []
 // busqueda y fetch
